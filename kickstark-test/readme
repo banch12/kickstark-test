@@ -1,0 +1,16 @@
+
+in function set_roadmap_stages, I am passing an array pointer, with array elements having % values which each stage of
+the project should have.
+In the test, I am passing an array of length 5, with arrray elements having following values:
+
+    array[0] = 20;
+    array[1] = 30;
+    array[2] = 40;
+    array[3] = 770;
+    array[4] = 15;
+
+But when I call function set_roadmap_stages recursively, I have to use it like this:
+
+    stage_percentage.write(const_total_len - roadmap_percentages_len,roadmap_percentages[0]);
+
+Note that I have to pass roadmap_percentages[0], which is surprising to me, else function won't work
